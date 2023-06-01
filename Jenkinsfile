@@ -46,5 +46,16 @@ pipeline {
                  
             }
         }
+                    stage('artifactory  ') {
+            steps {
+                
+            sh 'docker tag module6_frontend omer5800devops.jfrog.io/docker-trial/react-java0mysql-frontend-1:$BUILD_ID'
+            sh 'docker tag module6_backend omer5800devops.jfrog.io/docker-trial/react-java0mysql-backend-1:$BUILD_ID'
+            sh 'docker tag module6_mariaDB omer5800devops.jfrog.io/docker-trial/react-java0mysql-mariaDB-1:$BUILD_ID'
+
+
+                 
+            }
+        }
     }
 }
